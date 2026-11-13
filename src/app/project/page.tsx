@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Footer from "@/components/footer";
+import MyCard from "@/components/mycard";
 
 export default function ProjectPage() {
   return (
@@ -25,9 +26,9 @@ export default function ProjectPage() {
         </nav>
       </header>
 
-      {/* เนื้อหาหน้า Project */}
-      <main className="flex-1 flex items-center justify-center px-6 py-16">
-        <div className="max-w-2xl w-full bg-white rounded-3xl shadow-xl shadow-sky-100/60 border border-slate-100 p-10 text-center space-y-4">
+      {/* เนื้อหาหน้า Project แสดงผลด้วย MyCard */}
+      <main className="flex-1 max-w-4xl w-full mx-auto px-6 py-14 space-y-8">
+        <div className="text-center space-y-2">
           <span className="inline-block px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-xs font-semibold uppercase tracking-wider">
             Showcase
           </span>
@@ -35,6 +36,21 @@ export default function ProjectPage() {
           <p className="text-slate-500 text-base">
             พื้นที่สำหรับรวบรวมผลงานและโปรเจคที่พัฒนา
           </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <MyCard
+            tag="Week 02"
+            title="Personal Portfolio Website"
+            description="เว็บไซต์แนะนำตัวและรวบรวมผลงาน สร้างด้วย Next.js App Router, TypeScript และ Tailwind CSS"
+            href="/bio"
+          />
+          <MyCard
+            tag="Assignment"
+            title="Web Programming Lab"
+            description="รวมแบบฝึกหัดและการบ้านในรายวิชาเทคโนโลยีสารสนเทศ"
+            href="/assignment"
+          />
         </div>
       </main>
 

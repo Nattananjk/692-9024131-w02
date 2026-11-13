@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Footer from "@/components/footer";
+import MyCard from "@/components/mycard";
 
 export default function AssignmentPage() {
   return (
@@ -26,16 +27,48 @@ export default function AssignmentPage() {
       </header>
 
       {/* เนื้อหาหน้า Assignment */}
-      <main className="flex-1 flex items-center justify-center px-6 py-16">
-        <div className="max-w-2xl w-full bg-white rounded-3xl shadow-xl shadow-sky-100/60 border border-slate-100 p-10 text-center space-y-4">
+      <main className="flex-1 max-w-4xl w-full mx-auto px-6 py-14 space-y-10">
+        {/* ส่วนหัวข้อหน้า */}
+        <div className="text-center space-y-3">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-xs font-semibold uppercase tracking-wider">
+            Coursework &amp; Labs
+          </span>
           <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">Assignment</h1>
-          <p className="text-slate-500 text-base">
-            พื้นที่สำหรับรวบรวมแบบฝึกหัดและการบ้านในรายวิชา
+          <p className="text-slate-500 text-base max-w-xl mx-auto">
+            พื้นที่สำหรับรวบรวมแบบฝึกหัด ปฏิบัติการ และการบ้านในรายวิชาการพัฒนาเว็บแอปพลิเคชัน
           </p>
+        </div>
+
+        {/* รายการงานแต่ละสัปดาห์ด้วย MyCard */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <MyCard
+            tag="Week 01 • Setup"
+            title="Environment & Next.js Installation"
+            description="ติดตั้งเครื่องมือพัฒนา Node.js, pnpm, VS Code และสร้างโครงสร้างโปรเจค Next.js เริ่มต้น"
+            href="/"
+          />
+          <MyCard
+            tag="Week 02 • Routing & Components"
+            title="Multi-page Portfolio & Custom Components"
+            description="สร้างระบบนำทางหลายหน้า (Home, Bio, Assignment, Project) พร้อมแยกส่วนประกอบ Footer และ MyCard"
+            href="/bio"
+          />
+          <MyCard
+            tag="Week 03 • UI Library"
+            title="Modern UI Design & Component Styling"
+            description="ออกแบบส่วนติดต่อผู้ใช้ด้วย Tailwind CSS และศึกษาการใช้งานคอมโพเนนต์มาตรฐาน"
+            href="/project"
+          />
+          <MyCard
+            tag="Git & GitHub"
+            title="Version Control & Repository Deployment"
+            description="จัดการซอร์สโค้ดด้วยคำสั่ง Git และเผยแพร่โปรเจคขึ้นบน GitHub Repository"
+            href="https://github.com/Nattananjk/692-9024131-w02"
+          />
         </div>
       </main>
 
       <Footer />
     </div>
   );
-}
+}git add .
